@@ -1,0 +1,15 @@
+{
+    "name": "impagina/latest-build",
+    "description": "Get the latest Scribus build from Travis",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ale rimoldi",
+            "email": "ale@graphicslab.org"
+        }
+    ],
+    "require": {
+        "php-curl-class/php-curl-class": "^7.2"
+    }
+}
