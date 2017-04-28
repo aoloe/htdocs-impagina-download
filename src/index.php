@@ -24,21 +24,21 @@ function debug($label, $value)
 
 function getCurl($url, $type = 'json')
 {
-	$curl = new Curl();
-	$curl->setUserAgent('impagina-get-latest-scribus/0.0.1 (+http://impagina.org/travis)');
+    $curl = new Curl();
+    $curl->setUserAgent('impagina-get-latest-scribus/0.0.1 (+http://impagina.org/travis)');
     $curl->setOpt(CURLOPT_FOLLOWLOCATION, true);
     if ($type === 'json') {
         $curl->setHeader('Accept:', 'application/vnd.travis-ci.2+json');
     } elseif ($type === 'txt') {
         $curl->setHeader('Accept:', 'text/plain');
     }
-	$curl->get($url);
+    $curl->get($url);
 
-	if ($curl->error) {
-		echo '<p>Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "</p>\n";
-	} else {
-		return $curl->response;
-	}
+    if ($curl->error) {
+        echo '<p>Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "</p>\n";
+    } else {
+        return $curl->response;
+    }
 return null;
 
 }
